@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the Symphony Machine Management</h1>
+    <hr class="my-4">
+    {% if current_user.is_authenticated %}
+      <p>You can manage your machines by visiting the <a href="{{ url_for('list_machines') }}">Machines</a> page.</p>
+    {% else %}
+      <p>Please <a href="{{ url_for('login') }}">login</a> to continue.</p>
+    {% endif %}
+  </div>
+{% endblock %}

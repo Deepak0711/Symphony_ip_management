@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Edit Machine{% endblock %}
+
+{% block content %}
+  <h2>Edit Machine</h2>
+  <form method="POST" action="{{ url_for('edit_machine', ip_address=machine.ip_address) }}">
+    <div class="mb-3">
+      <label for="ip_address" class="form-label">IP Address</label>
+      <input type="text" class="form-control" id="ip_address" name="ip_address" value="{{ machine.ip_address }}" disabled>
+    </div>
+    <div class="mb-3">
+      <label for="model" class="form-label">Model</label>
+      <input type="text" class="form-control" id="model" name="model" value="{{ machine.model }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="serial_number" class="form-label">Serial Number</label>
+      <input type="text" class="form-control" id="serial_number" name="serial_number" value="{{ machine.serial_number }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="os" class="form-label">Operating System</label>
+      <input type="text" class="form-control" id="os" name="os" value="{{ machine.os }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="rack_number" class="form-label">Rack Number</label>
+      <input type="text" class="form-control" id="rack_number" name="rack_number" value="{{ machine.rack_number }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="team_name" class="form-label">Team Name</label>
+      <input type="text" class="form-control" id="team_name" name="team_name" value="{{ machine.team_name }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="user" class="form-label">User</label>
+      <input type="text" class="form-control" id="user" name="user" value="{{ machine.user }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="owner" class="form-label">Owner</label>
+      <input type="text" class="form-control" id="owner" name="owner" value="{{ machine.owner }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comment</label>
+      <textarea class="form-control" id="comment" name="comment">{{ machine.comment }}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="setup_details" class="form-label">Setup Details</label>
+      <textarea class="form-control" id="setup_details" name="setup_details">{{ machine.setup_details }}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="num_interfaces" class="form-label">Number of Interfaces</label>
+      <input type="number" class="form-control" id="num_interfaces" name="num_interfaces" value="{{ machine.num_interfaces }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Machine</button>
+  </form>
+{% endblock %}

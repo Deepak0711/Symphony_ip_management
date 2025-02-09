@@ -1,0 +1,227 @@
+/* Base Body & Font */
+body {
+  background-color: #f8f9fa; /* Light gray background */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #343a40; /* Dark gray text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #343a40 !important;
+  font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Container and General Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 10px; /* Center align */
+  margin-right:10px
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Jumbotron / Home Page Header */
+.jumbotron {
+  background-color: #e9ecef;
+  padding: 2rem 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Tables (for default Bootstrap tables) */
+.table {
+  background-color: #ffffff;
+}
+.table th,
+.table td {
+  vertical-align: middle !important;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 2px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Alerts & Flash Messages */
+.alert {
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 2px;
+  border: 1px solid #ced4da;
+}
+
+/* Import CSV Page Styling */
+#file {
+  padding: 5px;
+}
+
+/* Utility Classes */
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+.ms-2 {
+  margin-left: 0.5rem !important;
+}
+
+/* Navbar Flex Alignment */
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand {
+  align-self: center;
+  margin-right: 1rem;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .nav-link {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Machines Table Styles */
+.table-machines {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.table-machines thead tr {
+  background-color: #007bff; /* Header background color */
+  color: #ffffff;            /* Header text color */
+  text-align: left;
+}
+.table-machines th,
+.table-machines td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+.table-machines tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+.table-machines tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action Buttons Container */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Edit Button */
+.btn-edit {
+  background-color: #28a745; /* Green */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+/* Delete Button */
+.btn-delete {
+  background-color: #dc3545; /* Red */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Request Button */
+.btn-request {
+  background-color: #17a2b8; /* Teal */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: inline-flex; /* Ensures proper alignment */
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  min-width: 80px; /* Adjust width as needed */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    padding: 15px;
+  }
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+  .table-machines th, .table-machines td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-machines {
+    font-size: 14px;
+  }
+  .btn-edit, .btn-delete, .btn-request {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

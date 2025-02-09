@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Request Machine{% endblock %}
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+{% block content %}
+  <h2>Request Machine: {{ machine.ip_address }} - {{ machine.model }}</h2>
+  <form method="POST" action="{{ url_for('request_machine', ip_address=machine.ip_address) }}">
+    <div class="mb-3">
+      <label for="requester_name" class="form-label">Name</label>
+      <!-- Pre-fill with current username if desired -->
+      <input type="text" class="form-control" id="requester_name" name="requester_name" value="{{ current_user.username }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="reason" class="form-label">Reason</label>
+      <textarea class="form-control" id="reason" name="reason" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+  </form>
+{% endblock %}
+
